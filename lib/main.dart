@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:use_case/core/init/main_build.dart';
+import 'package:use_case/example/network_change_example.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      builder: MainBuild.build,
+      home: NetworkChangeExample(),
     );
   }
 }
